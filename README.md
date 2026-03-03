@@ -1,12 +1,11 @@
-1. Push your code to GitHub on main or master branch
-2. The workflow automatically:
+The workflow automatically:
 - Sets up Julia 1.10
 - Installs Documenter.jl
 - Builds your documentation
 - Deploys to GitHub Pages
 
-**Next steps**:
-1. Initialize a git repository (if not already done):
+**Steps**:
+1. Push your code to GitHub on main or master branch (if not already done):
 ```
 git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 git branch -M main
