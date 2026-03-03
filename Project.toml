@@ -1,0 +1,7 @@
+[package]
+name = "Documentation"
+uuid = "00000000-0000-0000-0000-000000000000"
+version = "0.1.0"
+
+[compat]
+julia = "1.10"
