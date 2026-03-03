@@ -19,6 +19,6 @@ git branch -M main
 git push -u origin main
 ```
 
-3. In GitHub repository settings, enable GitHub Pages and set the source branch to 'gh-pages'
+3. In GitHub repository settings, enable GitHub Pages and set the source branch to `gh-pages`
 
 Your documentation will then be automatically deployed to https://YOUR_USERNAME.github.io/YOUR_REPO/
