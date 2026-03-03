@@ -1,0 +1,35 @@
+name: Build and Deploy Documentation
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: '1.10'
+      
+      - name: Install dependencies
+        working-directory: docs
+        run: |
+          julia --project=@. -e 'using Pkg; Pkg.instantiate()'
+      
+      - name: Build documentation
+        working-directory: docs
+        run: |
+          julia --project=@. make.jl
+      
+      - name: Deploy documentation
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs/build
